@@ -1,6 +1,7 @@
-let osc, envelope;
+let osc, envelope, oldX = 0, oldY = 0;
 let note = 0;
 let frame_release = 60;
+let idle = 0;
 
 function setup() {
   createCanvas(1100, 750);  
@@ -9,7 +10,7 @@ function setup() {
   // Instantiate the envelope
   envelope = new p5.Env();
   // set attackTime, decayTime, sustainRatio, releaseTime
-  envelope.setADSR(0.001, 0.6, 0.1, 0.8);
+  envelope.setADSR(0.2, 0.3, 0.2, 0.3);
   // set attackLevel, releaseLevel
   envelope.setRange(1, 0);
   
@@ -18,14 +19,34 @@ function setup() {
 
 function draw() {
 
+    if(oldX == mouseX && oldY == mouseY){
+        idle = min(idle + 1, 300);
+    }
+    else{
+        idle = 0;
+    }
+
     if (frameCount % frame_release === 0 || frameCount === 1) {
-        let midiValue = 60 + int(mouseX/width * 8)-1;
+
+        if(idle<300){
+            midiValue = 48 + int(mouseX/width * 8)-1;
+        }
+        else{
+            midiValue = 42 + int(random(28));
+        }
+
+        
         let freqValue = midiToFreq(midiValue);
         osc.freq(freqValue);
 
-        envelope.play(osc, 0, 0.45);
+        envelope.play(osc, 0, 1.5);
         note = (note + 1) % 8;
-        frame_release = 60 + int(mouseY/height * 60)-1;       
+        if(note % 4 == 0){
+            frame_release = 20 + int(mouseY/height * 60)-1;
+        }        
+
+        oldX = mouseX
+        oldY = mouseY
     }
 
 }
