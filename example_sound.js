@@ -7,14 +7,16 @@ function setup() {
   createCanvas(1100, 750);  
   
   osc = new p5.SinOsc();
+  reverb = new p5.Reverb();
   // Instantiate the envelope
   envelope = new p5.Env();
   // set attackTime, decayTime, sustainRatio, releaseTime
-  envelope.setADSR(0.1, 0.4, 0.2, 0.3);
+  envelope.setADSR(0.4, 0.1, 0.1, 0.4);
   // set attackLevel, releaseLevel
   envelope.setRange(0.9, 0);
   
   osc.start();
+  reverb.process(osc, 2, 2);
 }
 
 function draw() {
@@ -29,7 +31,7 @@ function draw() {
     if (frameCount % frame_release === 0 || frameCount === 1) {
 
         if(idle<300){
-            midiValue = 48 + int(mouseX/width * 8)-1;
+            midiValue = 48 + int(mouseX/width * 12)-1;
         }
         else{
             midiValue = 42 + int(random(28));
@@ -39,11 +41,12 @@ function draw() {
         let freqValue = midiToFreq(midiValue);
         osc.freq(freqValue);
 
-        envelope.play(osc, 0, 5);
+        let dryWet = constrain(map(mouseY, 0, height, 0, 1), 0, 1);
+        // 1 = all reverb, 0 = no reverb
+        reverb.drywet(dryWet);
+
+        envelope.play(osc, 0, 4);
         note = (note + 1) % 8;
-        if(note % 4 == 0){
-            frame_release = 65 + int(mouseY/height * 60)-1;
-        }        
 
         oldX = mouseX
         oldY = mouseY
