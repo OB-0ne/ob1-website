@@ -11,9 +11,9 @@ function setup() {
   // Instantiate the envelope
   envelope = new p5.Env();
   // set attackTime, decayTime, sustainRatio, releaseTime
-  envelope.setADSR(0.4, 0.1, 0.1, 0.4);
+  envelope.setADSR(0.001, 0.5, 0.1, 0.3, 0);
   // set attackLevel, releaseLevel
-  envelope.setRange(0.9, 0);
+  envelope.setRange(0.1, 0.4, 0.1, 0.5);
   
   osc.start();
   reverb.process(osc, 2, 2);

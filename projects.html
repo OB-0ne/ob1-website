@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="projects.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src='scripts/custom_util.js'></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+</head>
+
+<body>
+
+    <div id="main-back">
+
+        <div id="navbar-back">
+            <div id = "navbar">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a class='selected_tab' href="projects.html">Projects</a></li>
+                </ul> 
+            </div>
+        </div>
+
+        <div id='main_body'>
+            <div id='projects'>
+                <div id='projects_meta'>
+
+                </div>
+                <div id='projects_list'>
+                </div>
+                <div id='projects_foot'>
+
+                </div>
+            </div>
+        </div>
+
+    </div>    
+
+    <div id='footer'>
+        <div id="info">
+            Made using d3.js, p5.js, HTML, CSS <span> &#164; </span> Omkar Bhatt
+        </div>
+    </div>
+
+    
+    <script>
+        get_projects_list();
+    </script>
+
+</body>
+
+</html>

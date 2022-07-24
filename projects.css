@@ -1,0 +1,51 @@
+#projects{
+    padding: 10px;
+    width: 100%;
+}
+
+.project_link_icon{
+    width: 35px;
+}
+
+.project_back{
+    padding: 5px;
+    border: #333 2px solid;
+    border-radius: 3px;
+    margin: 5px;
+    background-color: #333;
+    color: white;
+    width: 300px;
+    height: 380px;
+    display: inline-block;
+}
+
+.project_back div{
+    padding: 5px;  
+}
+
+.project_name{
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+}
+
+.project_meta-info{
+    font-size: 16px;
+    font-style: italic;
+    text-align: right;
+}
+
+.project_time{
+    font-size: 16px;
+    font-style: italic;
+    display: inline-block;
+    text-align: right;
+}
+                
+.project_description{
+    text-align: justify;
+}
+
+.project_main_image{
+    width: 300px;
+}
