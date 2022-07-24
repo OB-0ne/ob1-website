@@ -3,53 +3,87 @@ let note = 0;
 let frame_release = 60;
 let idle = 0;
 
+let muteButton, muteState;
+
+var audio_context = new AudioContext;
+
 function setup() {
-  createCanvas(1100, 750);  
+    createCanvas(1100, 750); 
   
-  osc = new p5.SinOsc();
-  reverb = new p5.Reverb();
-  // Instantiate the envelope
-  envelope = new p5.Env();
-  // set attackTime, decayTime, sustainRatio, releaseTime
-  envelope.setADSR(0.001, 0.5, 0.1, 0.3, 0);
-  // set attackLevel, releaseLevel
-  envelope.setRange(0.1, 0.4, 0.1, 0.5);
+    // make the mute button
+    muteState = true;
+    outputVolume(0, 0);
+
   
-  osc.start();
-  reverb.process(osc, 2, 2);
+    osc = new p5.SinOsc();
+    reverb = new p5.Reverb();
+    // Instantiate the envelope
+    envelope = new p5.Env();
+    // set attackTime, decayTime, sustainRatio, releaseTime
+    envelope.setADSR(0.001, 0.5, 0.1, 0.3, 0);
+    // set attackLevel, releaseLevel
+    envelope.setRange(0.1, 0.4, 0.1, 0.5);
+    
+    
+    osc.start();
+    reverb.process(osc, 2, 2);
+
 }
 
 function draw() {
 
-    if(oldX == mouseX && oldY == mouseY){
-        idle = min(idle + 1, 300);
-    }
-    else{
-        idle = 0;
-    }
-
-    if (frameCount % frame_release === 0 || frameCount === 1) {
-
-        if(idle<300){
-            midiValue = 48 + int(mouseX/width * 12)-1;
+    if(audio_context.state=='running'){
+        if(oldX == mouseX && oldY == mouseY){
+            idle = min(idle + 1, 300);
         }
         else{
-            midiValue = 42 + int(random(28));
+            idle = 0;
         }
+    
+        if (frameCount % frame_release === 0 || frameCount === 1) {
+    
+            if(idle<300){
+                midiValue = 48 + int(mouseX/width * 12)-1;
+            }
+            else{
+                midiValue = 42 + int(random(28));
+            }
+    
+            
+            let freqValue = midiToFreq(midiValue);
+            osc.freq(freqValue);
+    
+            let dryWet = constrain(map(mouseY, 0, height, 0, 1), 0, 1);
+            // 1 = all reverb, 0 = no reverb
+            reverb.drywet(dryWet);
+    
+            envelope.play(osc, 0, 4);
+            note = (note + 1) % 8;
+    
+            oldX = mouseX
+            oldY = mouseY
+        }
+    }   
 
-        
-        let freqValue = midiToFreq(midiValue);
-        osc.freq(freqValue);
+}
 
-        let dryWet = constrain(map(mouseY, 0, height, 0, 1), 0, 1);
-        // 1 = all reverb, 0 = no reverb
-        reverb.drywet(dryWet);
-
-        envelope.play(osc, 0, 4);
-        note = (note + 1) % 8;
-
-        oldX = mouseX
-        oldY = mouseY
+function toggleAudioContext() {
+    if(audio_context.state=='suspended'){
+        audio_context.resume();
     }
+}
 
+function toggleMute() {
+    
+    toggleAudioContext();
+
+    if (muteState === false) {
+        document.getElementById("mute_button").src = "icons/player/mute-48.png";
+        outputVolume(0, 1);
+        muteState = true;//adjusts state variable
+    } else {
+        document.getElementById("mute_button").src = "icons/player/voice-48.png";
+        outputVolume(1, 1);
+        muteState = false; //adjusts state variable
+    }
 }
