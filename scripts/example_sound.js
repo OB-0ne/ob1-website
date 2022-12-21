@@ -6,6 +6,7 @@ let idle = 0;
 let muteButton, muteState;
 
 var audio_context = new AudioContext;
+var audio_no_permission = true;
 
 function setup() {
     createCanvas(1100, 750); 
@@ -18,7 +19,7 @@ function setup() {
     osc = new p5.SinOsc();
     reverb = new p5.Reverb();
     // Instantiate the envelope
-    envelope = new p5.Env();
+    envelope = new p5.Envelope();
     // set attackTime, decayTime, sustainRatio, releaseTime
     envelope.setADSR(0.001, 0.5, 0.1, 0.3, 0);
     // set attackLevel, releaseLevel
@@ -63,6 +64,7 @@ function draw() {
             oldX = mouseX
             oldY = mouseY
         }
+        console.log('yes')
     }   
 
 }
@@ -75,6 +77,11 @@ function toggleAudioContext() {
 
 function toggleMute() {
     
+    if(audio_no_permission){
+        userStartAudio();
+        audio_no_permission = false;
+    }
+
     toggleAudioContext();
 
     if (muteState === false) {
