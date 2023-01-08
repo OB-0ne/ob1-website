@@ -104,14 +104,19 @@ function get_articles_list(){
                     .attr('class',key)
             }
 
-            console.log(data[i]['project-image'])
             back.append('img')
                 .attr('src', data[i]['project-image'])
                 .attr('class','project_main_image')
 
         }
-    });
 
-    
+        // limit the string to specific number of substrings
+        d3.selectAll('.project_name').each(function() {
+            const html = d3.select(this).html();
+            console.log(html);
+            d3.select(this).html(html.substring(0, 58) + '...');
+        });
+
+    });
 
 }

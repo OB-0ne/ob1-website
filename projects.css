@@ -47,5 +47,10 @@
 }
 
 .project_main_image{
-    width: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
 }
