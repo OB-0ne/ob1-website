@@ -1,94 +1,94 @@
 body {
-    background-color: lightgrey;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-  
-  #main-back{
-    width: 1000px;
-    margin: 5px auto;
-    padding: 0px 10px;
-  }
-  
-  #contact_me{
-    text-align: center;
-  }
-  
-  #navbar-back{
-    background-color: black;
-    vertical-align: middle;
-    font-size: 24px;
-  }
-  
-  .selected_tab {
-    background-color: black;
-  }
-  
-  #footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    color: white;
-    background-color: black;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  #footer span{
-    font-size: 22px;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 2px;
-    padding: 2px;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    width: 200px;
-  }
-  
-  
-  li a:hover {
-    background-color: #111;
-  }
-  
-  
-  #info{
-    display: inline;
-  }
-  
-  .social_media_icons{
-    width: 60px;
-    padding: 5px;
-  }
+  background-color: lightgrey;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-  #audio_player{
-    background-color: grey;
-    border-radius: 100%;
-    width: 38px;
-    height: 38px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 10px;
-  }
+#main-back{
+  width: 1000px;
+  margin: 5px auto;
+  padding: 0px 10px;
+}
 
-  #mute_button{
-    width: 32px;
-    height: 32px;
-    padding: 2px 2px 2px 4px;
-    color: white;
-  }
+#contact_me{
+  text-align: center;
+}
+
+#navbar-back{
+  background-color: black;
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+.selected_tab {
+  background-color: black;
+}
+
+#footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#footer span{
+  font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 2px;
+  padding: 2px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 200px;
+}
+
+
+li a:hover {
+  background-color: #111;
+}
+
+
+#info{
+  display: inline;
+}
+
+.social_media_icons{
+  width: 60px;
+  padding: 5px;
+}
+
+#audio_player{
+  background-color: grey;
+  border-radius: 100%;
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+}
+
+#mute_button{
+  width: 32px;
+  height: 32px;
+  padding: 2px 2px 2px 4px;
+  color: white;
+}

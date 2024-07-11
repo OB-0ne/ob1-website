@@ -52,9 +52,14 @@ function get_projects_list(){
     main_div = d3.select('#projects_list')
 
     d3.csv('data/project_info.csv', function(data){
+
         for (var i = 0; i < data.length; i++) {
             back = main_div.append('div')
                             .attr('class','project_back')
+                            .append('a')
+                            .attr('href','#')
+                            .attr('class','project_card_click')
+                            .attr('onclick','project_card_pop_up('+i+')')
 
             // add all the info together
             info_items = {
@@ -62,12 +67,14 @@ function get_projects_list(){
                 'project_meta-info': 'meta-info'
             }
 
+            // add the title and meta info to to the card
             for(var key in info_items){
                 back.append('div')
                     .text(data[i][info_items[key]])
                     .attr('class',key)
             }
 
+            // add the image tot he card
             console.log(data[i]['project-image'])
             back.append('img')
                 .attr('src', data[i]['project-image'])
@@ -78,6 +85,35 @@ function get_projects_list(){
 
     
 
+}
+
+
+function project_card_pop_up(project_id){
+    
+    d3.select('#project_popup_overlay')
+        .style('visibility','visible')
+        .style('opacity','1');
+
+    d3.csv('data/project_info.csv', function(data){
+        d3.select("#project_popup_title")
+            .html(data[project_id]['name']);
+        d3.select("#project_popup_info")
+            .html(data[project_id]['description']);
+        d3.select("#project_popup_tags")
+            .html(data[project_id]['expertise']);
+        d3.select("#project_popup_dates")
+            .html(data[project_id]['time']);
+        d3.select("#project_popup_video")
+            .attr('src',data[project_id]['youtube-link']);
+
+            console.log(project_id,data[project_id]['name'])
+    })
+}
+
+function project_card_pop_up_close(){
+    d3.select('#project_popup_overlay')
+        .style('visibility','hidden')
+        .style('opacity','0');
 }
 
 function get_articles_list(){
