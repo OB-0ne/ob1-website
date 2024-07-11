@@ -106,7 +106,6 @@ function project_card_pop_up(project_id){
         d3.select("#project_popup_video")
             .attr('src',data[project_id]['youtube-link']);
 
-            console.log(project_id,data[project_id]['name'])
     })
 }
 
