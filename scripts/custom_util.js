@@ -49,7 +49,7 @@ function get_projects_list_old(){
 
 function get_projects_list(){
 
-    main_div = d3.select('#projects_list')
+    main_div = d3.select('#projects_list');
 
     d3.csv('data/project_info.csv', function(data){
 
@@ -59,7 +59,7 @@ function get_projects_list(){
                             .append('a')
                             .attr('href','#')
                             .attr('class','project_card_click')
-                            .attr('onclick','project_card_pop_up('+i+')')
+                            .attr('onclick','project_card_pop_up('+i+')');
 
             // add all the info together
             info_items = {
@@ -80,12 +80,9 @@ function get_projects_list(){
                 .attr('class','project_main_image')
 
         }
-    });
-
-    
+    });    
 
 }
-
 
 function project_card_pop_up(project_id){
     
@@ -114,17 +111,17 @@ function project_card_pop_up_close(){
         .style('opacity','0');
 }
 
-function get_articles_list(){
+function get_articles_list() {
 
     main_div = d3.select('#articles_list')
 
-    d3.csv('data/article_info.csv', function(data){
+    d3.csv('data/article_info.csv', function (data) {
         for (var i = 0; i < data.length; i++) {
             back = main_div.append('a')
-                            .attr('href',data[i]['article-link'])
-                            .attr('target','_blank')
-                            .append('div')
-                            .attr('class','project_back')
+                .attr('href', data[i]['article-link'])
+                .attr('target', '_blank')
+                .append('div')
+                .attr('class', 'project_back')
 
             // add all the info together
             info_items = {
@@ -132,20 +129,20 @@ function get_articles_list(){
                 'project_meta-info': 'meta-info'
             }
 
-            for(var key in info_items){
+            for (var key in info_items) {
                 back.append('div')
                     .text(data[i][info_items[key]])
-                    .attr('class',key)
+                    .attr('class', key)
             }
 
             back.append('img')
                 .attr('src', data[i]['project-image'])
-                .attr('class','project_main_image')
+                .attr('class', 'project_main_image')
 
         }
 
         // limit the string to specific number of substrings
-        d3.selectAll('.project_name').each(function() {
+        d3.selectAll('.project_name').each(function () {
             const html = d3.select(this).html();
             d3.select(this).html(html.substring(0, 58) + '...');
         });
