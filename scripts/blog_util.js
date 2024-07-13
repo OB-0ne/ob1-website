@@ -4,8 +4,8 @@ const get_blog_posts = async () => {
     data = await d3.csv(url, d3.autotype);
 
     // filter data in descending order
+    data = data.slice().sort((a,b) => d3.descending(a.date, b.date));
     
-
     console.log(data[0])
 
     main_div = d3.select('#blogpost_list');
@@ -14,12 +14,10 @@ const get_blog_posts = async () => {
         back = main_div.append('div').attr('class','blogpost_back')
 
         // add the image
-        if(data[i]['picture_id'] != ''){
-            back.append('img')
-                .attr('src', 'https://drive.google.com/open?id=' + data[i]['picture_id'])
-                .attr('class','blogpost_image')
-                .attr('referrerPolicy','no-referrer')
-        }
+        back.append('img')
+            .attr('src', data[i]['picture_url'])
+            .attr('class', 'blogpost_image')
+        
         
         
         back = back.append('div').attr('class','blogpost_content')
