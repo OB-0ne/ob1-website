@@ -59,7 +59,7 @@ function get_projects_list(){
                             .append('a')
                             .attr('href','#')
                             .attr('class','project_card_click')
-                            .attr('onclick','project_card_pop_up('+i+')');
+                            .attr('onclick','project_card_pop_up('+data[i]['id']+')');
 
             // add all the info together
             info_items = {
@@ -91,6 +91,11 @@ function project_card_pop_up(project_id){
         .style('opacity','1');
 
     d3.csv('data/project_info.csv', function(data){
+
+        console.log(project_id,data[project_id])
+        // data = data.slice().sort((a,b) => d3.descending(a.id, b.id));
+        // console.log(project_id,data[project_id])
+
         d3.select("#project_popup_title")
             .html(data[project_id]['name']);
         d3.select("#project_popup_info")
@@ -109,6 +114,17 @@ function project_card_pop_up_close(){
     d3.select('#project_popup_overlay')
         .style('visibility','hidden')
         .style('opacity','0');
+
+    d3.select("#project_popup_title")
+        .html("Title");
+    d3.select("#project_popup_info")
+        .html("Lorem Ipsum...");
+    d3.select("#project_popup_tags")
+        .html('');
+    d3.select("#project_popup_dates")
+        .html('');
+    d3.select("#project_popup_video")
+        .attr('src','');
 }
 
 function get_articles_list() {

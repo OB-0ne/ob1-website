@@ -92,3 +92,27 @@ li a:hover {
   padding: 2px 2px 2px 4px;
   color: white;
 }
+
+#about_me {
+  width: 60%;
+  height: 600px;
+  background-color: #333;
+  color: white;
+  align-content: center;
+  padding: 20px;
+  margin: 40px auto;
+}
+
+#about_me div{
+  color: white;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+#about_me div a:visited{
+  color: orange
+}
+#about_me div a:unvisited{
+  color: skyblue
+}
