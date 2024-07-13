@@ -14,9 +14,13 @@ const get_blog_posts = async () => {
         back = main_div.append('div').attr('class','blogpost_back')
 
         // add the image
-        back.append('img')
-            .attr('src', data[i]['picture_url'])
-            .attr('class','blogpost_image')
+        if(data[i]['picture_id'] != ''){
+            back.append('img')
+                .attr('src', 'https://drive.google.com/open?id=' + data[i]['picture_id'])
+                .attr('class','blogpost_image')
+                .attr('referrerPolicy','no-referrer')
+        }
+        
         
         back = back.append('div').attr('class','blogpost_content')
 
@@ -31,13 +35,27 @@ const get_blog_posts = async () => {
                 .html(data[i]['date']);
 
         // add the notion for the post
-        back.append('div')
-                .attr('class','blogpost_notion')
-                .html(data[i]['notion']);
+        temp = back.append('div')
+                .attr('class','blogpost_notion');
 
+        data[i]['notion'].split('|').forEach(para => {
+            temp.append('p')
+                .attr('class','blogpost_notion_para')
+                .html(para.trim());
+        });
+
+        // for (var i = 0; i < convert_notion_gsheet(data[i]['notion']); i++) {
+        //         // console.log(data[i]['notion']);
+        //         console.log(convert_notion_gsheet(data[i]['notion']));
+        // }
         
     }
 
 };
 
-  
+function convert_notion_gsheet(notion){
+    // split on '-' for paragraphs
+    temp = notion.split('-');
+
+    return temp
+}
