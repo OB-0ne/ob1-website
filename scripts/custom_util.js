@@ -64,7 +64,7 @@ function get_projects_list(){
             // add all the info together
             info_items = {
                 'project_name': 'name',
-                'project_meta-info': 'meta-info'
+                'project_meta-info': 'meta-info'                
             }
 
             // add the title and meta info to to the card

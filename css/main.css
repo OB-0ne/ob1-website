@@ -19,6 +19,10 @@ body {
   font-size: 24px;
 }
 
+#main_body{
+  margin-bottom: 52px;
+}
+
 .selected_tab {
   background-color: black;
 }
@@ -100,7 +104,7 @@ li a:hover {
   color: white;
   align-content: center;
   padding: 20px;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 
 #about_me div{
@@ -113,6 +117,6 @@ li a:hover {
 #about_me div a:visited{
   color: orange
 }
-#about_me div a:unvisited{
-  color: skyblue
+#about_me div a{
+  color: yellow
 }
