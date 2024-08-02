@@ -1,7 +1,8 @@
 let osc, envelope, oldX = 0, oldY = 0;
 let note = 0;
-let frame_release = 60;
+let frame_release = 35;
 let idle = 0;
+let i = 0;
 
 let muteButton, muteState;
 
@@ -15,66 +16,61 @@ function setup() {
     muteState = true;
     outputVolume(0, 0);
 
-  
-    osc = new p5.SinOsc();
-    reverb = new p5.Reverb();
-    // Instantiate the envelope
-    envelope = new p5.Envelope();
-    // set attackTime, decayTime, sustainRatio, releaseTime
-    envelope.setADSR(0.001, 0.5, 0.1, 0.3, 0);
-    // set attackLevel, releaseLevel
-    envelope.setRange(0.1, 0.4, 0.1, 0.5);
-    
-    
-    osc.start();
-    reverb.process(osc, 2, 2);
+    // generate all synth variables
+    d_bass = new drum_bass();
+    d_snare = new drum_snare();
 
 }
+
 
 function draw() {
 
     if(audio_context.state=='running'){
-        if(oldX == mouseX && oldY == mouseY){
-            idle = min(idle + 1, 300);
-        }
-        else{
-            idle = 0;
-        }
+
+        d_bass_sets = [1, 0, 1, 0]
+        d_bass_on = d_bass_sets[0]
+        d_snare_sets = [[0, 1, 0, 1],[0, 1, 1, 1]]
+        d_snare_on = d_bass_sets[0]
     
         if (frameCount % frame_release === 0 || frameCount === 1) {
     
-            if(idle<300){
-                midiValue = 48 + int(mouseX/width * 12)-1;
+            //envelope.play(osc, 0, 10);
+            if(d_bass_on[i]){
+                d_bass.play_me();
+            }
+            if(Math.random()>0.75){
+                temp = 1;
             }
             else{
-                midiValue = 42 + int(random(28));
+                temp = 0;
             }
-    
-            
-            let freqValue = midiToFreq(midiValue);
-            osc.freq(freqValue);
-    
-            let dryWet = constrain(map(mouseY, 0, height, 0, 1), 0, 1);
-            // 1 = all reverb, 0 = no reverb
-            reverb.drywet(dryWet);
-    
-            envelope.play(osc, 0, 4);
-            note = (note + 1) % 8;
-    
-            oldX = mouseX
-            oldY = mouseY
+            if(d_snare_on[i]){
+                d_snare.play_me();
+            }
+
+            // create a manual beat tracker
+            i = i + 1;
+            if(i == 4){
+                // reset at 4th beat
+                i = 0;
+                
+                // reset to a random snare pattern
+                
+            }
         }
-        console.log('yes')
     }   
 
 }
 
+
+// turns on the audio context to the js code for audio in the browser window
 function toggleAudioContext() {
     if(audio_context.state=='suspended'){
         audio_context.resume();
     }
 }
 
+// Works with the mute button to mute/unmute sound on window
 function toggleMute() {
     
     if(audio_no_permission){
