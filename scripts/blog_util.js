@@ -3,6 +3,9 @@ const get_blog_posts = async () => {
     url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIYnNipLnXtyxELbY9YLnH_FrhZbkG2trccjfCbs_T9QRP1H1xxQbGhVFKrhJLT97xNazFE7WvuXWy/pub?gid=0&single=true&output=csv";
     data = await d3.csv(url, d3.autotype);
 
+    // filter on the publish column to only show the published items
+    data = data.filter(function (d) {return (d.publish == "TRUE") });
+
     // filter data in descending order
     data = data.slice().sort((a,b) => d3.descending(a.date, b.date));
 

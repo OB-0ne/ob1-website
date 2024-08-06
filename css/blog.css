@@ -28,6 +28,7 @@
     max-height: 300px;
     object-fit: cover;
     object-position: center center;
+    margin-top: 15px;
 }
 
 .blogpost_date{
@@ -37,6 +38,6 @@
 .blogpost_content{
     display: inline-block;
     width: 64%;
-    padding: 20px;
+    padding: 0px 22px;
     align-content: center;
 }
