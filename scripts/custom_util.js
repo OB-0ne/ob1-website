@@ -49,48 +49,95 @@ function get_projects_list_old(){
 
 function get_projects_list(){
 
-    main_div = d3.select('#projects_list')
+    main_div = d3.select('#projects_list');
 
     d3.csv('data/project_info.csv', function(data){
+
         for (var i = 0; i < data.length; i++) {
             back = main_div.append('div')
                             .attr('class','project_back')
+                            .append('a')
+                            .attr('href','#')
+                            .attr('class','project_card_click')
+                            .attr('onclick','project_card_pop_up('+data[i]['id']+')');
 
             // add all the info together
             info_items = {
                 'project_name': 'name',
-                'project_meta-info': 'meta-info'
+                'project_meta-info': 'meta-info'                
             }
 
+            // add the title and meta info to to the card
             for(var key in info_items){
                 back.append('div')
                     .text(data[i][info_items[key]])
                     .attr('class',key)
             }
 
-            console.log(data[i]['project-image'])
+            // add the image tot he card
             back.append('img')
                 .attr('src', data[i]['project-image'])
                 .attr('class','project_main_image')
 
         }
-    });
-
-    
+    });    
 
 }
 
-function get_articles_list(){
+function project_card_pop_up(project_id){
+    
+    d3.select('#project_popup_overlay')
+        .style('visibility','visible')
+        .style('opacity','1');
+
+    d3.csv('data/project_info.csv', function(data){
+
+        console.log(project_id,data[project_id])
+        // data = data.slice().sort((a,b) => d3.descending(a.id, b.id));
+        // console.log(project_id,data[project_id])
+
+        d3.select("#project_popup_title")
+            .html(data[project_id]['name']);
+        d3.select("#project_popup_info")
+            .html(data[project_id]['description']);
+        d3.select("#project_popup_tags")
+            .html(data[project_id]['expertise']);
+        d3.select("#project_popup_dates")
+            .html(data[project_id]['time']);
+        d3.select("#project_popup_video")
+            .attr('src',data[project_id]['youtube-link']);
+
+    })
+}
+
+function project_card_pop_up_close(){
+    d3.select('#project_popup_overlay')
+        .style('visibility','hidden')
+        .style('opacity','0');
+
+    d3.select("#project_popup_title")
+        .html("Title");
+    d3.select("#project_popup_info")
+        .html("Lorem Ipsum...");
+    d3.select("#project_popup_tags")
+        .html('');
+    d3.select("#project_popup_dates")
+        .html('');
+    d3.select("#project_popup_video")
+        .attr('src','');
+}
+
+function get_articles_list() {
 
     main_div = d3.select('#articles_list')
 
-    d3.csv('data/article_info.csv', function(data){
+    d3.csv('data/article_info.csv', function (data) {
         for (var i = 0; i < data.length; i++) {
             back = main_div.append('a')
-                            .attr('href',data[i]['article-link'])
-                            .attr('target','_blank')
-                            .append('div')
-                            .attr('class','project_back')
+                .attr('href', data[i]['article-link'])
+                .attr('target', '_blank')
+                .append('div')
+                .attr('class', 'project_back')
 
             // add all the info together
             info_items = {
@@ -98,22 +145,21 @@ function get_articles_list(){
                 'project_meta-info': 'meta-info'
             }
 
-            for(var key in info_items){
+            for (var key in info_items) {
                 back.append('div')
                     .text(data[i][info_items[key]])
-                    .attr('class',key)
+                    .attr('class', key)
             }
 
             back.append('img')
                 .attr('src', data[i]['project-image'])
-                .attr('class','project_main_image')
+                .attr('class', 'project_main_image')
 
         }
 
         // limit the string to specific number of substrings
-        d3.selectAll('.project_name').each(function() {
+        d3.selectAll('.project_name').each(function () {
             const html = d3.select(this).html();
-            console.log(html);
             d3.select(this).html(html.substring(0, 58) + '...');
         });
 

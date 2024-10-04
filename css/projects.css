@@ -1,0 +1,147 @@
+#projects{
+    padding: 10px;
+    width: 100%;
+}
+
+.project_link_icon{
+    width: 35px;
+}
+
+.project_back{
+    padding: 5px;
+    border: #333 2px solid;
+    border-radius: 3px;
+    margin: 5px;
+    background-color: #333;
+    color: white;
+    width: 300px;
+    height: 380px;
+    display: inline-block;
+}
+
+.project_back div{
+    padding: 5px;  
+}
+
+.project_name{
+    font-size: 20px;
+    width: 100%;
+    height: 40px;
+}
+
+.project_meta-info{
+    font-size: 16px;
+    font-style: italic;
+    text-align: right;
+}
+
+.project_time{
+    font-size: 16px;
+    font-style: italic;
+        text-align: right;
+}
+                
+.project_description{
+    text-align: justify;
+}
+
+.project_main_image{
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+a.project_card_click {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: whitesmoke;
+}
+a.project_card_click:visited {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+/* Pop-up CSS */
+
+#project_popup_overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 300ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#project_popup{
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 55%;
+    height: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+#project_popup_left{
+    width: 70%;
+    display: block;
+    float:left;
+    height: 100%;
+}
+
+#project_popup_right{
+    width: 30%;
+    display: block;
+    margin-left: 70%;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    padding: 10px;
+}
+
+#project_popup .close {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+#project_popup .close:hover {
+    color: #06D85F;
+}
+
+#project_popup_video{
+    width: 100%;
+    height: 100%;
+}
+
+#project_popup_title{
+    font-style: bold;
+    font-size: 24px;
+    padding: 10px 0px;
+}
+
+#project_popup_tags{
+    padding: 10px 0px;
+    font-style: bold;
+    color: #333;
+}
+
+#project_popup_dates{
+    padding: 10px 0px;
+    font-style: italic;
+    color: #333;
+}

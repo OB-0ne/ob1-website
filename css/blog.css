@@ -1,0 +1,43 @@
+#blogposts{
+    background-color: #333;
+    padding: 10px;
+    width: 98%;
+}
+
+.blogpost_back{
+    padding: 5px;
+    border: #eee 2px solid ;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #333;
+    color: #eee;
+    display: inline-block;
+}
+
+.blogpost_title{
+    font-size: 22px;
+    width: 100%;
+}
+
+.blogpost_notion{
+    text-align: justify;
+}
+
+.blogpost_image{
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center center;
+    margin-top: 15px;
+}
+
+.blogpost_date{
+    font-style: italic;
+}
+
+.blogpost_content{
+    display: inline-block;
+    width: 64%;
+    padding: 0px 22px;
+    align-content: center;
+}

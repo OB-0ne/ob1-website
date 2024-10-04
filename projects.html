@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.js"></script> -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src='scripts/custom_util.js'></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
+    <title>Projects - Omkar Bhatt</title>
+    <link rel="icon" type="image/x-icon" href="/icons/brownie_cat.ico">
 </head>
 
 <body>
@@ -17,8 +21,9 @@
             <div id = "navbar">
                 <ul>
                     <li><a href="index.html">About Me</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a class='selected_tab' href="projects.html">Projects</a></li>
-                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="articles.html">Press</a></li>
                 </ul> 
             </div>
         </div>
@@ -34,6 +39,24 @@
 
                 </div>
             </div>
+
+            <div id="project_popup_overlay">
+                <div id="project_popup">
+                    <div id="project_popup_left">
+                        <iframe id="project_popup_video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div id="project_popup_right">
+                        <div id="project_popup_title"></div>
+                        <div id="project_popup_info"></div>
+                        <div id="project_popup_tags"></div>
+                        <div id="project_popup_dates"></div>
+                    </div>
+                    <div id="project_popup_close">
+                        <a class="close" href="#" onclick="project_card_pop_up_close()">&times;</a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
     </div>    

@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.js"></script> -->
+    <link rel="stylesheet" href="css/blog.css">
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src='scripts/custom_util.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.js"></script>
+    <script src='scripts/blog_util.js'></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
-    <title>Omkar on the net</title>
-    <link rel="icon" type="image/x-icon" href="icons/brownie_cat.ico">
+    <title>Where is my mind?</title>
+    <link rel="icon" type="image/x-icon" href="/icons/brownie_cat.ico">
 </head>
 
 <body>
@@ -20,25 +21,26 @@
             <div id = "navbar">
                 <ul>
                     <li><a href="index.html">About Me</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class='selected_tab' href="blog.html">Blog</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a class='selected_tab' href="articles.html">Press</a></li>
+                    <li><a href="articles.html">Press</a></li>
                 </ul> 
             </div>
         </div>
 
         <div id='main_body'>
-            <div id='projects'>
-                <div id='projects_meta'>
+            <div id='blogposts'>
+                <div id='blog_meta'>
 
                 </div>
-                <div id='articles_list'>
-                    
+                <div id='blogpost_list'>
+
                 </div>
-                <div id='projects_foot'>
+                <div id='blog_foot'>
 
                 </div>
             </div>
+            
         </div>
 
     </div>    
@@ -51,7 +53,7 @@
 
     
     <script>
-        get_articles_list();
+        get_blog_posts();
     </script>
 
 </body>
