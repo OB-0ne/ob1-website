@@ -6,8 +6,17 @@ const get_blog_posts = async () => {
     // filter on the publish column to only show the published items
     data = data.filter(function (d) {return (d.publish == "TRUE") });
 
+    // Create a date parser 
+    const parseDate = d3.timeParse("%Y-%m-%d");
+    // Convert the column to date objects
+    data.forEach(d => {
+        d.date = parseDate(d.date);
+    });
+
     // filter data in descending order
     data = data.slice().sort((a,b) => d3.descending(a.date, b.date));
+
+    console.log(data);
 
     main_div = d3.select('#blogpost_list');
 
@@ -29,9 +38,10 @@ const get_blog_posts = async () => {
                 .html("Log " + String(data[i]['log_no']).padStart(2, '0') + ": " + data[i]['title']);
 
         // date to it
+        const dateDisplayFormat = d3.timeFormat("%d %B, %Y"); 
         back.append('div')
                 .attr('class','blogpost_date')
-                .html(data[i]['date']);
+                .html(dateDisplayFormat(data[i]['date']));
 
         // add the notion for the post
         temp = back.append('div')
