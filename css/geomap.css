@@ -1,3 +1,7 @@
 .leaflet-control-container .leaflet-routing-container-hide {
     display: none;
 }
+
+.image_marker{
+    color: black;
+}
