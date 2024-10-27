@@ -2,6 +2,18 @@
     display: none;
 }
 
-.image_marker{
-    color: black;
+.leaflet-popup-content-wrapper {
+    width: auto !important; /* Adjust popup width to fit content */
+    padding: 5px; /* Optional: Adjust padding to fit image better */
+}
+
+.leaflet-popup-content{
+    width: auto !important;
+}
+
+.geomap_marker_trip_image{
+    width: auto;
+    max-width: 650px;
+    height: auto;
+    max-height: 600px;
 }
