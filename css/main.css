@@ -113,6 +113,9 @@ li a:hover {
   margin: auto;
   text-align: center;
 }
+#about_me br{
+  margin-top: 4px;
+}
 
 #about_me div a:visited{
   color: orange

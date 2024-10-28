@@ -44,7 +44,6 @@
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    padding: 20px;
     z-index: 1001;
 }
 
@@ -56,12 +55,23 @@
 /* Close button styling */
 .close-btn {
     position: absolute;
-    height: 30px;
-    top: 25px;
-    right: 60px;
+    height: 50px;
+    top: 30px;
+    right: 30px;
     background-color: #ff4f4f;
     padding: 5px;
     border-radius: 100%;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+#info-popup-content{
+    width: 78%;
+}
+
+#info-popup-content a:visited{
+    color: orange
+}
+#info-popup-content a{
+    color: yellow
 }

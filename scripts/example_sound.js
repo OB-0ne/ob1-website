@@ -1,7 +1,8 @@
 let osc, envelope, oldX = 0, oldY = 0;
 let note = 0;
-let frame_release = 60;
+let frame_release = 25;
 let idle = 0;
+let idle_limit = 120;
 
 let muteButton, muteState;
 
@@ -15,7 +16,6 @@ function setup() {
     muteState = true;
     outputVolume(0, 0);
 
-  
     osc = new p5.SinOsc();
     reverb = new p5.Reverb();
     // Instantiate the envelope
@@ -24,7 +24,6 @@ function setup() {
     envelope.setADSR(0.001, 0.5, 0.1, 0.3, 0);
     // set attackLevel, releaseLevel
     envelope.setRange(0.1, 0.4, 0.1, 0.5);
-    
     
     osc.start();
     reverb.process(osc, 2, 2);
@@ -35,15 +34,15 @@ function draw() {
 
     if(audio_context.state=='running'){
         if(oldX == mouseX && oldY == mouseY){
-            idle = min(idle + 1, 300);
+            idle = min(idle + 1, idle_limit);
         }
         else{
             idle = 0;
         }
+
+        if (frameCount % frame_release == 0 || frameCount === 1) {
     
-        if (frameCount % frame_release === 0 || frameCount === 1) {
-    
-            if(idle<300){
+            if(idle<idle_limit){
                 midiValue = 48 + int(mouseX/width * 12)-1;
             }
             else{
@@ -52,10 +51,9 @@ function draw() {
     
             
             let freqValue = midiToFreq(midiValue);
-            osc.freq(freqValue);
-    
-            let dryWet = constrain(map(mouseY, 0, height, 0, 1), 0, 1);
-            // 1 = all reverb, 0 = no reverb
+            osc.freq(freqValue);    
+            
+            let dryWet = constrain(map(mouseY, -900, height, 0, 1), 0, 1);
             reverb.drywet(dryWet);
     
             envelope.play(osc, 0, 4);
@@ -64,7 +62,6 @@ function draw() {
             oldX = mouseX
             oldY = mouseY
         }
-        console.log('yes')
     }   
 
 }
