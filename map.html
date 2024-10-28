@@ -33,7 +33,24 @@
             </div>
     
             <div id='main_body'>
-                <div id='map' style='width: 100%; height: 800px;'></div>
+                <div id='map' style='width: 100%; height: 800px;'>
+                
+                    <div class="info-icon" onclick="toggleGeomapInfoPopup()">
+                        <img src="icons/map/info-icon.png" height="30px" width="30px"></img>
+                    </div>
+
+                    <div id="info-popup" class="info-popup">
+                        <div class="close-btn" onclick="toggleGeomapInfoPopup()">
+                            <img src="icons/map/popup-close.png" height="30px" width="30px"></img>
+                        </div>
+                        <div>
+                        <h2>Welcome to the Map</h2>
+                        <p>This map shows the journey of our recent road trip across America with markers, journal entries, and more!</p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         <div id='footer'>

@@ -83,3 +83,14 @@ function draw_map(){
   map.setMaxBounds(map.getBounds());
 
 }
+
+// Toggle popup visibility
+function toggleGeomapInfoPopup() {
+  const infoPopup = document.getElementById('info-popup');
+  infoPopup.classList.toggle('hidden');
+}
+
+// Show popup on page load
+window.onload = function() {
+  document.getElementById('info-popup').classList.remove('hidden');
+};
