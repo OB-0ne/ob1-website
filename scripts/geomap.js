@@ -1,6 +1,8 @@
 
 function draw_map(){
 
+  document.getElementById('map').setAttribute("style","height:"+(window.innerHeight - 120)+"px");
+
   // Add a tile layer (you can change to other providers if needed)
   var def_Map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
