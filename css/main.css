@@ -1,12 +1,13 @@
 body {
   background-color: lightgrey;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  box-sizing: 100%;
 }
 
 #main-back{
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 5px auto;
-  padding: 0px 10px;
 }
 
 #contact_me{
@@ -20,7 +21,7 @@ body {
 }
 
 #main_body{
-  margin-bottom: 52px;
+  margin-bottom: 52px; /* Helps to float the footer */
 }
 
 .selected_tab {
@@ -98,8 +99,9 @@ li a:hover {
 }
 
 #about_me {
-  width: 60%;
-  height: 600px;
+  width: 90%;
+  max-width: 650px;
+  height: 100%;
   background-color: #333;
   color: white;
   align-content: center;
