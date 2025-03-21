@@ -84,7 +84,7 @@ li a:hover {
   border-radius: 100%;
   width: 38px;
   height: 38px;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 46px;
   margin: 10px;
@@ -136,16 +136,25 @@ li a:hover {
   display: none;
 }
 
-#navbar li a{
-  width: 200px;
+#navbar li{
+  width: 25%;
+  box-sizing: border-box;
 }
+
+#phone-meta-info{
+  display: none;
+}
+
+/* #navbar li a{
+  width: 200px;
+} */
 
 /* UI specific for mobile */
 #navbar-phone-menu{
   background-color: grey;
   border-radius: 10%;
   height: 38px;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   margin: 8px;
@@ -181,6 +190,13 @@ li a:hover {
   width: 100%;
 }
 
+#phone-page-title{
+  margin: auto;
+  width: fit-content;
+  font-size: xx-large;
+  padding: 10px;
+}
+
 /* UI override for phone */
 @media (max-width: 768px)  {
   #navbar-phone{
@@ -190,6 +206,9 @@ li a:hover {
     display: none;
   }
   #audio_player{
-    bottom: 56px;
+    bottom: 58px;
+  }
+  #phone-meta-info{
+    display: block;
   }
 }

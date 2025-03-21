@@ -1,7 +1,8 @@
 #blogposts{
     background-color: #333;
     padding: 10px;
-    width: 98%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .blogpost_back{
@@ -14,30 +15,49 @@
     display: inline-block;
 }
 
-.blogpost_title{
-    font-size: 22px;
-    width: 100%;
-}
-
-.blogpost_notion{
-    text-align: justify;
-}
-
 .blogpost_image{
     max-width: 300px;
     max-height: 300px;
     object-fit: cover;
     object-position: center center;
     margin-top: 15px;
+    padding: 0px 10px;
+}
+
+.blogpost_title{
+    font-size: 22px;
+    width: 100%;
 }
 
 .blogpost_date{
     font-style: italic;
 }
 
+.blogpost_notion{
+    text-align: justify;
+}
+
 .blogpost_content{
     display: inline-block;
     width: 64%;
-    padding: 0px 22px;
+    padding: 0px 10px;
     align-content: center;
+}
+
+/* UI changes for phone */
+@media (max-width: 768px)  {
+    .blogpost_back{
+        display: block;
+    }
+    .blogpost_image{
+        display: block;
+        margin: auto;
+        padding: 12px;
+    }
+    .blogpost_content{
+        width: inherit;
+    }
+    #main_body {
+        margin-bottom: 70px;
+    }
 }
