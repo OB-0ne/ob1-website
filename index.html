@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.js"></script>
+        <script src="scripts/ui_utils.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <title>Omkar Bhatt - Hi!</title>
         <link rel="icon" type="image/x-icon" href="icons/brownie_cat.ico">
@@ -16,7 +17,6 @@
         <script src="scripts/example_sound.js"></script>
 
         <div id="main-back">
-
             <div id="navbar-back">
                 <div id = "navbar">
                     <ul>
@@ -29,15 +29,36 @@
                         <img src="icons/player/mute-48.png" id="mute_button" onclick="toggleMute();" >
                     </div>
                 </div>
+                <div id="navbar-phone">
+                    <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
+                        <img src="icons/menu.png" height="36px" id="navbar_phone_button">
+                    </div>
+                    <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
+                        <div id="navbar-phone-holder-list">
+                            <ul>
+                                <li><a class='selected_tab' href="index.html">About Me</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="articles.html">Press</a></li>
+                            </ul>   
+                        </div>                         
+                    </div>                    
+                    <div id = "audio_player">
+                        <img src="icons/player/mute-48.png" id="mute_button" onclick="toggleMute();" >
+                    </div>
+                </div>
             </div>
     
             <div id='main_body'>
+                <div id="site-logo" >
+                    <img src="icons/ob_logo.png">
+                </div>
                 <div id='about_me'>
                     <div>
                         <div style="font-size: x-large;">
                             Hello!
                             <br>
-                            My name is Omkar Bhatt
+                            My name is Omkar
                             <br>
                         </div>
                         
@@ -48,7 +69,7 @@
                         <br>
                         <u style="font-size: x-large;">Whats working currently?</u>
                         <br>
-                        - A small speaker icon on top-right which may play you some random beep-boops. But if you move your mouse it works like a note-changing <a href="https://www.youtube.com/watch?v=K6KbEnGnymk&ab_channel=PeterPringle">theremin</a>.
+                        - A small speaker icon on bottom-right which may play you some random beep-boops. But if you move your mouse it works like a note-changing <a href="https://www.youtube.com/watch?v=K6KbEnGnymk&ab_channel=PeterPringle">theremin</a>.
                         <br>
                         - An <a href="map.html">interactive map</a> of the road trip I took in Aug 2024, with some pcitures I took.
                         <br>

@@ -62,7 +62,6 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  width: 200px;
 }
 
 
@@ -87,7 +86,7 @@ li a:hover {
   height: 38px;
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 46px;
   margin: 10px;
 }
 
@@ -96,6 +95,12 @@ li a:hover {
   height: 32px;
   padding: 2px 2px 2px 4px;
   color: white;
+}
+
+#site-logo img{
+  display: block;
+  margin: auto;
+  width: 240px;
 }
 
 #about_me {
@@ -124,4 +129,67 @@ li a:hover {
 }
 #about_me div a{
   color: yellow
+}
+
+/* UI override for Desktop */
+#navbar-phone{
+  display: none;
+}
+
+#navbar li a{
+  width: 200px;
+}
+
+/* UI specific for mobile */
+#navbar-phone-menu{
+  background-color: grey;
+  border-radius: 10%;
+  height: 38px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 8px;
+  padding: 2px;
+  z-index: 10;
+}
+
+#navbar_phone_button{
+  margin: auto;
+}
+
+#navbar-phone-holder{
+  display: none;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+}
+
+#navbar-phone-holder-list{
+  padding: 30px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+#navbar-phone-holder-list li{
+  width: 100%;
+}
+
+/* UI override for phone */
+@media (max-width: 768px)  {
+  #navbar-phone{
+    display: block;
+  }
+  #navbar{
+    display: none;
+  }
+  #audio_player{
+    bottom: 56px;
+  }
 }
