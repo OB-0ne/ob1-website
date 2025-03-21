@@ -1,7 +1,12 @@
 
 function draw_map(){
 
-  document.getElementById('map').setAttribute("style","height:"+(window.innerHeight - 120)+"px");
+  let custom_map_height = window.innerHeight - 120;
+  // add a check to see if user is on mobile and set a different map height accordingly
+  if (window.innerWidth<=768){
+    custom_map_height = custom_map_height - 95;
+  }
+  document.getElementById('map').setAttribute("style","height:"+(custom_map_height)+"px");
 
   // Add a tile layer (you can change to other providers if needed)
   var def_Map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

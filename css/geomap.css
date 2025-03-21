@@ -13,9 +13,9 @@
 
 .geomap_marker_trip_image{
     width: auto;
-    max-width: 650px;
+    max-width: 90vw;
     height: auto;
-    max-height: 600px;
+    max-height: 48vw;
 }
 
 .info-icon {
@@ -74,4 +74,30 @@
 }
 #info-popup-content a{
     color: yellow
+}
+
+
+/* UI changes for phone */
+@media (max-width: 768px)  {
+    #info-popup-content {
+        width: 90%;
+    }
+    #navbar-phone-holder{
+        z-index: 1005;
+    }
+    .info-popup{
+        font-size: 1.5vh;
+    }
+    .close-btn {
+        height: 30px;
+        top: 10px;
+        right: 10px;
+    }
+    .close-btn IMG{
+        height: 30px;
+        width: 30px;
+    }
+    .geomap_marker_trip_image {
+        max-height: 65vw;
+    }
 }
