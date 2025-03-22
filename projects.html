@@ -2,11 +2,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/projects.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/ui_utils.js"></script>
+    <script src='scripts/custom_util.js'></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.js"></script> -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src='scripts/custom_util.js'></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/projects.css">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <title>Projects - Omkar Bhatt</title>
@@ -24,11 +27,34 @@
                     <li><a href="blog.html">Blog</a></li>
                     <li><a class='selected_tab' href="projects.html">Projects</a></li>
                     <li><a href="articles.html">Press</a></li>
-                </ul> 
+                </ul>   
+            </div>
+            <div id="navbar-phone">
+                <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
+                    <img src="icons/menu.png" height="36px" id="navbar_phone_button">
+                </div>
+                <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
+                    <div id="navbar-phone-holder-list">
+                        <ul>
+                            <li><a href="index.html">About Me</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a class='selected_tab' href="projects.html">Projects</a></li>
+                            <li><a href="articles.html">Press</a></li>
+                        </ul>   
+                    </div>                         
+                </div>
             </div>
         </div>
 
         <div id='main_body'>
+            <div id='phone-meta-info'>
+                <div id='site-logo' >
+                    <img src="icons/ob_logo.png">
+                </div>
+                <div id='phone-page-title'>
+                    My Projects
+                </div>
+            </div>
             <div id='projects'>
                 <div id='projects_meta'>
 

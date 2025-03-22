@@ -1,6 +1,7 @@
 #projects{
     padding: 10px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .project_link_icon{
@@ -129,7 +130,7 @@ a.project_card_click:visited {
 }
 
 #project_popup_title{
-    font-style: bold;
+    font-weight: bold;
     font-size: 24px;
     padding: 10px 0px;
 }
@@ -144,4 +145,27 @@ a.project_card_click:visited {
     padding: 10px 0px;
     font-style: italic;
     color: #333;
+}
+
+
+/* UI changes for phone */
+@media (max-width: 768px)  {
+    .project_back{
+        display: block;
+        margin: 10px auto;
+    }
+    #project_popup{
+        margin: 20px;
+        width: inherit;
+        height: inherit;
+    }
+    #project_popup_left{
+        width: 100%;
+        margin-top: 25px;
+    }
+    #project_popup_right{
+        margin-top: 176px;
+        width: inherit;
+        margin-left: 0px;
+    }
 }

@@ -10,7 +10,7 @@ var audio_context = new AudioContext;
 var audio_no_permission = true;
 
 function setup() {
-    createCanvas(1100, 10); 
+    createCanvas(windowWidth-14 , 10); 
   
     // make the mute button
     muteState = true;

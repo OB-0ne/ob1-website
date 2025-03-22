@@ -2,6 +2,9 @@
 <html>
 
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/ui_utils.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <title>Omkar's Travels</title>
         <link rel="icon" type="image/x-icon" href="icons/brownie_cat.ico">
@@ -28,11 +31,34 @@
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="articles.html">Press</a></li>
-                    </ul>    
+                    </ul>   
+                </div>
+                <div id="navbar-phone">
+                    <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
+                        <img src="icons/menu.png" height="36px" id="navbar_phone_button">
+                    </div>
+                    <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
+                        <div id="navbar-phone-holder-list">
+                            <ul>
+                                <li><a href="index.html">About Me</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="articles.html">Press</a></li>
+                            </ul>   
+                        </div>                         
+                    </div>
                 </div>
             </div>
     
             <div id='main_body'>
+                <div id='phone-meta-info'>
+                    <div id='site-logo' >
+                        <img src="icons/ob_logo.png">
+                    </div>
+                    <div id='phone-page-title'>
+                        National Park Road Trip
+                    </div>
+                </div>
                 <div id='map' style='width: 100%; height: 800px;'>
                 
                     <div class="info-icon" onclick="toggleGeomapInfoPopup()">
@@ -47,7 +73,7 @@
                             <h2>Road Tripping across the US - August 2024</h2>
                             <p>Welcome to a mini-documentation of the solo journey I took through 5 states, 7 national parks, some odd state parks and national monuments from Denver, Colorado to San Jose, California. I landed at the Denver Airport, rented a compact SUV (which also served as my hotel room throughout the trip) and embarked onto an scenic adventure, ending at Greek Theatre at Berkley to see one of my favorite artists - Khruangbin. (<a href="https://www.youtube.com/watch?v=gxCJToKyc-0&ab_channel=AustinCityLimitsTV" target="_blank">Who's that?</a>)</p>
                             <p>The map may come off too crowded with all the markers, so feel free to toggle them on/off from the top-right using the layers button. Zooming in will also help in viewing them better. The <span><img src="icons/map/poi-marker.png" height="30px"> (bull's eye) indicates some places I visited/camped at through the trip while the <span><img src="icons/map/image-marker.png" height="30px"></img></span> (camera) indicates some pictures I took. You can click the icon to view the pictures as well!</p>
-                            <p><u>Disclaimer</u>: Google Timelines is used to recreate the trip, which is notorious to be incorrect at places with low GPS like National Parks, so while some lines may come off-route, I hope you still enjoy viewing my experience taking this journey. If you face any issues or have any suggestions, please write to me.</p>
+                            <p><u>Disclaimer</u>: This page is best experienced on a desktop. Google Timelines is used to recreate the trip, which is notorious to be incorrect at places with low GPS like National Parks, so while some lines may come off-route, I hope you still enjoy viewing my experience taking this journey. If you face any issues or have any suggestions, please write to me.</p>
                             <p>Thank you for being here and supporting me my tiny projects. :)</p>
                         </div>
                     </div>

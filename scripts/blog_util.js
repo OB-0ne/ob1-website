@@ -16,8 +16,6 @@ const get_blog_posts = async () => {
     // filter data in descending order
     data = data.slice().sort((a,b) => d3.descending(a.date, b.date));
 
-    console.log(data);
-
     main_div = d3.select('#blogpost_list');
 
     for (var i = 0; i < data.length; i++) {
