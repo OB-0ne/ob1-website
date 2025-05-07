@@ -140,7 +140,7 @@ a.project_card_click:visited {
 }
 
 
-
+/* REMOVED 2 column pop-up in May 2025 */
 #project_popup_left{
     width: 70%;
     display: block;
