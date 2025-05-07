@@ -1,3 +1,5 @@
+let data_projects = [];
+
 function get_projects_list_old(){
 
     main_div = d3.select('#projects_list')
@@ -47,12 +49,17 @@ function get_projects_list_old(){
 
 }
 
-function get_projects_list(){
+async function get_projects_list(){
 
     main_div = d3.select('#projects_list');
+    url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRd7qBHpvC7wd0fbigPMTlYlF7LIHpRK03ZkmGr4PkP0ASmTZLYZuAhU32Df2-Q-9mpjjwYNSF0QIUv/pub?gid=1447634970&single=true&output=csv";
 
-    d3.csv('data/project_info.csv', function(data){
+    d3.csv(url,function(data){
+        
+        // store in a local variable for any further interaction
+        data_projects = data;
 
+        // show all the projects as a list
         for (var i = 0; i < data.length; i++) {
             back = main_div.append('div')
                             .attr('class','project_back')
@@ -60,27 +67,28 @@ function get_projects_list(){
                             .attr('href','#')
                             .attr('class','project_card_click')
                             .attr('onclick','project_card_pop_up('+data[i]['id']+')');
-
+    
             // add all the info together
             info_items = {
                 'project_name': 'name',
                 'project_meta-info': 'meta-info'                
             }
-
+    
             // add the title and meta info to to the card
             for(var key in info_items){
                 back.append('div')
                     .text(data[i][info_items[key]])
                     .attr('class',key)
             }
-
+    
             // add the image tot he card
             back.append('img')
                 .attr('src', data[i]['project-image'])
                 .attr('class','project_main_image')
-
+    
         }
-    });    
+    });
+    
 
 }
 
@@ -90,31 +98,28 @@ function project_card_pop_up(project_id){
         .style('visibility','visible')
         .style('opacity','1');
 
-    d3.csv('data/project_info.csv', function(data){
-
-        console.log(project_id,data[project_id])
-        // data = data.slice().sort((a,b) => d3.descending(a.id, b.id));
-        // console.log(project_id,data[project_id])
-
-        d3.select("#project_popup_title")
-            .html(data[project_id]['name']);
-        d3.select("#project_popup_info")
-            .html(data[project_id]['description']);
-        d3.select("#project_popup_tags")
-            .html(data[project_id]['expertise']);
-        d3.select("#project_popup_dates")
-            .html(data[project_id]['time']);
-        d3.select("#project_popup_video")
-            .attr('src',data[project_id]['youtube-link']);
-
-    })
+    // update the pop-up UI with details
+    d3.select("#project_popup_title")
+        .html(data_projects[project_id]['name']);
+    d3.select("#project_popup_info")
+        .html(data_projects[project_id]['description']);
+    d3.select("#project_popup_tags")
+        .html(data_projects[project_id]['expertise']);
+    d3.select("#project_popup_dates")
+        .html(data_projects[project_id]['time']);
+    d3.select("#project_popup_video")
+        .attr('src',data_projects[project_id]['youtube-link']);
+    
 }
 
 function project_card_pop_up_close(){
+    
+    // his the pop-up UI
     d3.select('#project_popup_overlay')
         .style('visibility','hidden')
         .style('opacity','0');
 
+    // remove all info from the UI and reset it
     d3.select("#project_popup_title")
         .html("Title");
     d3.select("#project_popup_info")
@@ -130,8 +135,9 @@ function project_card_pop_up_close(){
 function get_articles_list() {
 
     main_div = d3.select('#articles_list')
+    url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vThEd3Wan8qTsW6Ud5yVVNzxRsdMEK0DdQXQ-Rdy7S85zP2NxwBznKIECom5-m2h3WBoM4Ekxba7wau/pub?gid=1838937648&single=true&output=csv";
 
-    d3.csv('data/article_info.csv', function (data) {
+    d3.csv(url, function (data) {
         for (var i = 0; i < data.length; i++) {
             back = main_div.append('a')
                 .attr('href', data[i]['article-link'])
