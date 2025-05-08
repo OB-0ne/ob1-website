@@ -103,12 +103,27 @@ function project_card_pop_up(project_id){
         .html(data_projects[project_id]['name']);
     d3.select("#project_popup_info")
         .html(data_projects[project_id]['description']);
+    // conditionally add github link when available
+    if(data_projects[project_id]['github-link'] != '-' && data_projects[project_id]['github-link'] != ''){
+        d3.select("#project_popup_git")
+            .html('Github: <a target="_blank" href="' + data_projects[project_id]['github-link'] + '">'+ data_projects[project_id]['github-link'] + '</a>');
+    }   
     d3.select("#project_popup_tags")
         .html(data_projects[project_id]['expertise']);
     d3.select("#project_popup_dates")
         .html(data_projects[project_id]['time']);
-    d3.select("#project_popup_video")
-        .attr('src',data_projects[project_id]['youtube-link']);
+    
+    // conditionally add an iframe for video when available
+    if(data_projects[project_id]['youtube-link'] != '-' && data_projects[project_id]['youtube-link'] != ''){
+        d3.select("#project_popup_video")
+            .style('display','');
+        d3.select("#project_popup_video")
+            .attr('src',data_projects[project_id]['youtube-link']);
+    }
+    else{
+        d3.select("#project_popup_video")
+            .style('display','none');
+    }
     
 }
 
@@ -124,6 +139,8 @@ function project_card_pop_up_close(){
         .html("Title");
     d3.select("#project_popup_info")
         .html("Lorem Ipsum...");
+    d3.select("#project_popup_git")
+        .html('');
     d3.select("#project_popup_tags")
         .html('');
     d3.select("#project_popup_dates")
