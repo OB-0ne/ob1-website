@@ -1,0 +1,204 @@
+.leaflet-control-container .leaflet-routing-container-hide {
+    display: none;
+}
+
+.leaflet-popup-content-wrapper {
+    width: auto !important; /* Adjust popup width to fit content */
+    padding: 5px; /* Optional: Adjust padding to fit image better */
+}
+
+.leaflet-popup-content{
+    width: auto !important;
+}
+
+.geomap_marker_trip_image{
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 48vw;
+}
+
+.info-icon {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    background-color: #ffffff;
+    padding: 4px;
+    border-radius: 100%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    height: 30px;
+}
+
+/* Full-screen overlay popup styling */
+.info-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1001;
+}
+
+/* Specific UI for the info panel on top of map */
+
+#info-popup-byDate{
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 4px;
+    width: 28%;
+    height: 80%;
+    top: 10%;
+    overflow-y: scroll;
+    align-items: normal;
+    justify-content: left;
+    display: block;
+}
+
+#info-popup-byDate-content p, #info-popup-byDate-content h2{
+    overflow-wrap: anywhere;
+    margin: 8px 10px;
+}
+
+#info-popup-byDate-content h2{
+    align-items: center;
+}
+
+.info-popup-paragraph{
+    font-size: 1.8vh;
+}
+
+.info-popup-cities{
+    font-size: 1.5vh;
+    font-style: italic;
+    padding: 0px 5%;
+}
+
+#info-popup-Legend{
+    font-size: 1.6vh;
+    justify-content: center;
+    display: flex;
+}
+
+#info-popup-Legend ul {
+    list-style: none;
+    border: 1px dotted rgba(255, 255, 255, 0.8);
+    border-radius: 6%;
+    padding: 8px;
+    margin: 4px;
+}
+
+#info-popup-Legend ul li {
+    display: flex;
+    justify-content: center;
+    color: #ffe640;
+    text-align: center;
+    width: 100%;
+}
+
+/* Hidden state for popup */
+.hidden {
+    display: none;
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    height: 50px;
+    top: 30px;
+    right: 30px;
+    background-color: #ff4f4f;
+    padding: 5px;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#info-popup-content{
+    width: 78%;
+}
+
+#info-popup-content a:visited{
+    color: orange
+}
+#info-popup-content a{
+    color: yellow
+}
+
+/* Map Controls UI */
+
+#map-controls {
+    max-width: 100%;
+}
+
+#map-date-slider{
+    width: 84%;
+    margin: 0 8%;
+}
+
+#map-date-slider-info{
+    display: inline-block;
+    width: 100%;
+}
+
+.map-date-slider-name{
+    display: inline-block;
+    width: 16%;
+    text-align: center;
+    padding: 0px 3px;
+}
+
+
+/* UI changes for phone */
+@media (max-width: 768px)  {
+    #info-popup-content {
+        width: 90%;
+    }
+    #navbar-phone-holder{
+        z-index: 1005;
+    }
+    .info-popup{
+        font-size: 1.5vh;        
+        overflow-y: scroll;
+    }
+    .close-btn {
+        height: 30px;
+        top: 10px;
+        right: 10px;
+    }
+    .close-btn IMG{
+        height: 30px;
+        width: 30px;
+    }
+    .geomap_marker_trip_image {
+        max-height: 65vw;
+    }
+    #info-popup-byDate{
+        height: 25%;
+        width: 94%;
+        top: 70%;
+        margin: 10px;
+    }
+    .map-date-slider-name{
+        width: 15%;
+    }
+}
+
+#map{
+    transition-duration: display 200ms;
+}
+
+/* Tooltip CSS */
+.leaflet-tooltip{
+    font-size: 2vh;
+    padding: 6px;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Indo-Pak 2025 War Map</title>
+        <script src="../../scripts/ui_utils.js"></script>
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="icon" type="image/x-icon" href="../../icons/brownie_cat.ico">
+        <!-- d3 libraries -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <!-- leaflet libraries -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+        <script src='geomap.js'></script>
+        <link rel="stylesheet" href="geomap.css">
+        <!-- Leaflet Routing Machine -->
+        <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    </head>
+
+    <body>
+
+        <div id="main-back">
+    
+            <div id="navbar-back">
+                <div id = "navbar">
+                    <ul>
+                        <li><a href="../../index.html">About Me</a></li>
+                        <li><a href="../../blog.html">Blog</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><a href="../../articles.html">Press</a></li>
+                    </ul>   
+                </div>
+                <div id="navbar-phone">
+                    <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
+                        <img src="../../icons/menu.png" height="36px" id="navbar_phone_button">
+                    </div>
+                    <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
+                        <div id="navbar-phone-holder-list">
+                            <ul>
+                                <li><a href="../../index.html">About Me</a></li>
+                                <li><a href="../../blog.html">Blog</a></li>
+                                <li><a href="../../projects.html">Projects</a></li>
+                                <li><a href="../../articles.html">Press</a></li>
+                            </ul>   
+                        </div>                         
+                    </div>
+                </div>
+            </div>
+
+            <div id='main_body'>
+
+                <div id='phone-meta-info'>
+                    <div id='site-logo' >
+                        <img src="../../icons/ob_logo.png">
+                    </div>
+                    <div id='phone-page-title'>
+                        Indo-Pak War 2025
+                    </div>
+                </div>
+                <!-- THE MAP LAYER -->
+                <div id='map' style='width: 100%; height: 800px;'>
+
+                    <div class="info-icon" onclick="toggleGeomapInfoPopup()">
+                        <img src="../../icons/map/info-icon.png" height="30px" width="30px"></img>
+                    </div>
+                    
+                    <!-- MAP POP-UP INFO -->
+                    <div id="info-popup-byDate" class="info-popup hidden">
+                        <div id="info-popup-byDate-content">
+                            
+                        </div>
+                        <div id="info-popup-Legend">
+                            <ul>
+                                <li>Green dots indicate targets by Pakistan</li>
+                                <li>Purple dots indicate targets by India</li>
+                                <li>Red dots  show targets by terrorists</li>
+                                <li>Map can be zoomed in/out</li>
+                                <li>Clicking/hovering on dots shows location</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- LOADIN MAP POP-UP INFO -->
+                    <div id="info-popup" class="info-popup">
+                        <div class="close-btn" onclick="toggleGeomapInfoPopup()">
+                            <img src="../../icons/map/popup-close.png" height="50px" width="50px"></img>
+                        </div>
+                        <div id="info-popup-content">
+                            <h2>Mapping 2025 Pahalgam terror attack and the war that followed</h2>
+                            <p>Approximately 2 weeks after the terror attacks, Indian Armed Forces launched Operation Sindoor on 7th May targeting terror infrastructures in Pakistan and Pakistan-occupied-Kashmir (PoK). This was followed by a retaliatory attacks between the countries in form of drone, missiles and artillery shelling. A ceasefire was agreed upon 10th May, but the days in between were covered in fog of war and misinformation. <u>This interactive map presents verified strike locations, offering a geopolitical view of the events.</u></p>
+                            <p>The map has defined borders for India, Pakistan, and PoK. These have been interpolated by using <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/"  target="_blank">Natural Earth’s Countries point-of-views</a> database, which shows how a country sees other countries. The defined PoK is how the world views this geographical region. More details on the data analysis can be viewed on <a href="https://github.com/OB-0ne/geomap-Markhor-25" target="_blank">github</a>.</p>
+                            <p>All the locations depicting attacks use approximate co-ordinates to show cities/regions affected, but not the actual site of attacks. These have been collected from various news media sources including media briefings by the government of India. They have been verified with an article posted by <a href="https://thewire.in/security/complete-chronology-full-list-of-attacks-india-pakistan" target="_blank">The Wire</a>.</p>
+                            <p>The map was last updated on <i>25th May 2025</i>. Thank you for being here and supporting me and tiny projects. :)</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="map-controls">
+                    <input id="map-date-slider" type="range" width="100%" onchange="change_date()"></input>
+                    <div id="map-date-slider-info"></div>
+                </div>
+
+            </div>
+
+        <div id='footer'>
+            <div id="info">
+                Made using d3.js, Leaflet.js <span> &#164; </span> Omkar Bhatt
+            </div>
+            <script>
+                draw_map();
+                setup_map();
+            </script>
+        </div>
+
+    </body>
+</html> 
