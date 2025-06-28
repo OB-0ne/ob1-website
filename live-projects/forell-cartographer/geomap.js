@@ -77,10 +77,13 @@ function setup_map(){
 
 // Make the markers for the 12 ships
 function draw_ship_beacons(){
-  d3.csv("data/map_info/ship_beacons.csv",function(data) {
+
+  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAGelOOBFom8pECNkzGeTQC8yCZzmTToAnc2uEaAcDmk_YkcIbI6LTLWy0J6_1TVtHLLpJ923r2KEc/pub?gid=64832681&single=true&output=csv";
+
+  d3.csv(url, d3.autotype, function(data){
     data.forEach(d => {
-      L.circle([d.lat, d.long], {radius: 20000, color: d.circle_color}).addTo(layer_shipBeacon);     
-    });    
+      L.circle([d.lat, d.long], {radius: 20000, color: d.circle_color}).addTo(layer_shipBeacon); 
+    });   
   });
   
 }
@@ -100,7 +103,9 @@ function draw_yearndale_quests(){
     tooltipAnchor:[10, -25]
   });
 
-  d3.csv("data/map_info/quest_marker.csv",function(data) {
+  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkliXzriYwLF4xOxZ_2l-fT5PeGdy6-CLPprazhOr9-2WRw6w6YScusTq_vUhKAnPIFWgUJKdwmxwN/pub?gid=340077082&single=true&output=csv";
+
+  d3.csv(url,function(data) {
     data.forEach(d => {
       if(d.status.toLowerCase() == "completed"){
         marker_quest = L.marker([d.lat, d.long], {icon: questIcon_completed, title: d.name}).addTo(layer_quests_completed);
