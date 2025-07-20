@@ -44,15 +44,15 @@ function draw_map(){
   // initialize the control which can be interacted with
   var layerControl = L.control.layers(baseMaps,overlays).addTo(map);
 
-  // var baseMapOverlay_width = 202;
-  // var baseMapOverlay_height = 92;
-  // var latLngMapImage = L.latLngBounds([[-(baseMapOverlay_height/2),-(baseMapOverlay_width/2)],[baseMapOverlay_height/2,baseMapOverlay_width/2]]);
-  // var baseMapOverlay = L.imageOverlay("data/map_img/gia_map.png", latLngMapImage, {
-  //   opacity: 0.8,
-  //   interactive: true
-  // }).addTo(map);
+  var baseMapOverlay_width = 202;
+  var baseMapOverlay_height = 92;
+  var latLngMapImage = L.latLngBounds([[-(baseMapOverlay_height/2),-(baseMapOverlay_width/2)],[baseMapOverlay_height/2,baseMapOverlay_width/2]]);
+  var baseMapOverlay = L.imageOverlay("data/map_img/gia_map_270_01.png", latLngMapImage, {
+    opacity: 0.8,
+    interactive: true
+  }).addTo(map);
 
-  // map.fitBounds(latLngMapImage);
+  map.fitBounds(latLngMapImage);
 
   // setup first province map for Yearndale
   // var yearndale_center = [-17.9787, 3.8672];
@@ -82,7 +82,7 @@ function draw_ship_beacons(){
 
   d3.csv(url, d3.autotype, function(data){
     data.forEach(d => {
-      L.circle([d.lat, d.long], {radius: 20000, color: d.circle_color}).addTo(layer_shipBeacon); 
+      L.circle([d.lat, d.long], {radius: 30000, color: d.circle_color}).addTo(layer_shipBeacon); 
     });   
   });
   
