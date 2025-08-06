@@ -3,6 +3,7 @@ body {
   /* font-family: Georgia, 'Times New Roman', Times, serif; */
   font-family: Saira, monospace;
   box-sizing: 100%;
+  line-height: 1.2;
 }
 
 #main-back{
@@ -12,21 +13,33 @@ body {
 }
 
 #contact_me{
+  display: inline-block;
+  max-width: 260px;  
+  min-width: 150px;
   text-align: center;
+  margin: 8px;
+}
+
+
+
+#navbar ul{
+  display: flex;
 }
 
 #navbar-back{
-  background-color: black;
   vertical-align: middle;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 #main_body{
-  margin-bottom: 52px; /* Helps to float the footer */
+  margin-bottom: 38px; /* Helps to float the footer */
 }
 
 .selected_tab {
-  background-color: black;
+  background-color: #333;
+  color: white;
+  border-bottom: 3px double black;
+  border-radius: 15px;
 }
 
 #footer{
@@ -45,7 +58,15 @@ body {
   font-size: 22px;
 }
 
-ul {
+#navbar ul {
+  list-style-type: none;
+  margin: 2px;
+  padding: 2px;
+  /* overflow: hidden; */
+  /* background-color: #333; */
+}
+
+#navbar-phone-holder-list ul {
   list-style-type: none;
   margin: 2px;
   padding: 2px;
@@ -54,20 +75,24 @@ ul {
 }
 
 li {
-  float: left;
+  float: bottom;
+  align-content: center;
 }
 
 li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px 5px;
   text-decoration: none;
 }
 
 
 li a:hover {
-  background-color: #111;
+  background-color: #333;
+  color: white;
+  border-radius: 15px;
+  border-bottom: 3px double black;
 }
 
 
@@ -116,12 +141,16 @@ li a:hover {
 }
 
 #about_me div{
-  color: white;
   align-content: center;
-  margin: auto;
   text-align: center;
   margin-bottom: 5px;
 }
+
+#about_me p{
+  color: white;
+  text-align: justify;
+}
+
 #about_me br{
   margin-top: 4px;
 }
@@ -133,13 +162,39 @@ li a:hover {
   color: yellow
 }
 
+#about_me_desc{
+  display: inline-block; 
+  width: 66%; 
+  min-width: 310px; 
+  margin: 10px;
+  line-height: 1.4;
+}
+
+#about_me_desc div{
+  display: inline-block;
+}
+
+#live_projects_list{
+  display: inline-block;
+  width: 60%; 
+  text-align: justify; 
+  min-width: 310px; 
+  max-width: 450px; 
+  margin: 10px;
+  line-height: 1.4;
+}
+
+.live_project_title{
+  font-size: 19px;
+}
+
 /* UI override for Desktop */
 #navbar-phone{
   display: none;
 }
 
 #navbar li{
-  width: 25%;
+  width: 20%;
   box-sizing: border-box;
 }
 
@@ -212,5 +267,12 @@ li a:hover {
   }
   #phone-meta-info{
     display: block;
+  }
+  li a{
+    color: white;
+  }
+  .selected_tab {
+    background-color: black;
+    border-radius: 0px;
   }
 }

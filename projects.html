@@ -21,36 +21,39 @@
     <div id="main-back">
 
         <div id="navbar-back">
-            <div id = "navbar">
-                <ul>
-                    <li><a href="index.html">About Me</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a class='selected_tab' href="projects.html">Projects</a></li>
-                    <li><a href="articles.html">Press</a></li>
-                </ul>   
-            </div>
-            <div id="navbar-phone">
-                <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
-                    <img src="icons/menu.png" height="36px" id="navbar_phone_button">
+                <div id = "navbar">
+                    <ul>
+                        <li><a href="index.html">About Me</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <div id="site-logo"><a href="index.html"><img src="icons/ob_logo.png"></a></div>                        
+                        <li><a class='selected_tab' href="projects.html">Projects</a></li>
+                        <li><a href="articles.html">Press</a></li>
+                    </ul>
                 </div>
-                <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
-                    <div id="navbar-phone-holder-list">
-                        <ul>
-                            <li><a href="index.html">About Me</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a class='selected_tab' href="projects.html">Projects</a></li>
-                            <li><a href="articles.html">Press</a></li>
-                        </ul>   
-                    </div>                         
+                <div id="navbar-phone">
+                    <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
+                        <img src="icons/menu.png" height="36px" id="navbar_phone_button">
+                    </div>
+                    <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
+                        <div id="navbar-phone-holder-list">
+                            <ul>
+                                <li><a href="index.html">About Me</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a class='selected_tab' href="projects.html">Projects</a></li>
+                                <li><a href="articles.html">Press</a></li>
+                            </ul>   
+                        </div>                         
+                    </div>
+                    <div id="site-logo">
+                        <a href="index.html">
+                            <img src="icons/ob_logo.png">
+                        </a>
+                    </div>     
                 </div>
             </div>
-        </div>
 
         <div id='main_body'>
             <div id='phone-meta-info'>
-                <div id='site-logo' >
-                    <img src="icons/ob_logo.png">
-                </div>
                 <div id='phone-page-title'>
                     My Projects
                 </div>

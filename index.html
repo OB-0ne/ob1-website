@@ -22,6 +22,7 @@
                     <ul>
                         <li><a class='selected_tab' href="index.html">About Me</a></li>
                         <li><a href="blog.html">Blog</a></li>
+                        <div id="site-logo"><a href="index.html"><img src="icons/ob_logo.png"></a></div>                        
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="articles.html">Press</a></li>
                     </ul>
@@ -40,6 +41,11 @@
                             </ul>   
                         </div>                         
                     </div>
+                    <div id="site-logo">
+                        <a href="index.html">
+                            <img src="icons/ob_logo.png">
+                        </a>
+                    </div>     
                 </div>
             </div>
                                 
@@ -48,31 +54,27 @@
             </div>
     
             <div id='main_body'>
-                <div id="site-logo" >
-                    <img src="icons/ob_logo.png">
-                </div>
                 <div id='about_me'>
                     <div>
                         <!-- Self description -->
                         <div>
-                            <div style="display: inline-block; width: 66%; min-width: 310px;">
-                                <div style="font-size: x-large; display: inline-block;">
+                            <div id="about_me_desc">
+                                <div style="font-size: x-large; text-align: center;">
                                     Hello!
                                     <br>
                                     My name is Omkar
                                     <br>
                                 </div>
-                                <div style="display: inline-block;text-align: justify;">
+                                <div>
                                     <p>
                                         I'm a creative technologist and software consultant blending software development, data systems, and audio-visual design.
                                     </p>
                                     <p>
-                                        I have 8 years of experience working across disciplines: combining open-source tools, real-time data, and user accessibility to produce audio-visual experiences.
+                                        I have 8 years of experience working across disciplines: combining open-source tools, real-time data, and accessibility to produce user-friendly tools along with audio-visual experiences.
                                     </p>
                                 </div>
-                                
                             </div>
-                            <div style="display: inline-block; margin: 5px;">
+                            <div style="display: inline-block; margin: 8px;">
                                 <img src="https://i.imgur.com/gWXOcka.jpg" height="210" width="210">
                             </div>
                         </div>
@@ -81,44 +83,43 @@
                 <!-- Live Projects -->
                  <hr>
                 <div>
-                    <div style="display: inline-block;text-align: left; width: 55%; text-align: justify; min-width: 310px; max-width: 420px;">
-                        <br>
-                        <u style="font-size: x-large;">Live Projects</u>
+                    <div id="live_projects_list">
+                        <u style="font-size: x-large; text-align: justify;">Live Projects</u>
                         <br>
                         <p>
-                            - <b>Mouse Theramin</b>
+                            <b class="live_project_title">Mouse Theramin</b>
                             <br>
                             Click the small speaker icon on bottom-right to toggle on random beep-boops. Moving your mouse, or touching the screen will change notes. (What's a <a target="_blank" href="https://www.youtube.com/watch?v=K6KbEnGnymk&ab_channel=PeterPringle">theremin</a>?).
                         </p>
                         <p>
-                            - <b>2024 Road Trip Map</b>
+                            <b class="live_project_title">2024 Road Trip Map</b>
                             <br>
                             An <a target="_blank" href="live-projects/roadtrip-2024/index.html">interactive map</a> of the road trip I took in Aug 2024, with some pictures.
                         </p>
                         <p>
-                            - <b>RPG Campaign Map</b>
+                            <b class="live_project_title">RPG Campaign Map</b>
                             <br>
-                            A <a target="_blank" href="live-projects/forell-cartographer/index.html">cartographic representation</a> of my current Dungeons and Dragons homebrew campaign, showing quest markers for players.
+                            A <a target="_blank" href="live-projects/forell-cartographer/index.html">cartographic representation</a> of my currently ongoing Dungeons and Dragons homebrew campaign, showing quest markers for players.
                         </p>
                         <p>
-                            - <b>This website</b>
+                            <b  class="live_project_title">This website</b>
                             <br>
                             I keep updating the design and content on the website often, drop by again sometime soon!
                         </p>
-                        ... more in <a href="projects.html">Projects</a>
+                        <p>
+                            ... more in <a href="projects.html">Projects</a>
+                        </p>                        
                     </div>
-                    <div style="display: inline-block; max-width: 260px;  min-width: 150px;">
-                        <div id='contact_me'>
-                            <div id='contact_me_social_media'>
-                                <div><u style="font-size: x-large;">Contact Me</u></div>
-                                <a target="_blank" href='https://www.instagram.com/hazyh3ad/'><img class='social_media_icons' id='icon_instagram' src='https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_3-instagram-256.png'></a>
-                                <a target="_blank" href='https://github.com/OB-0ne'><img class='social_media_icons' id='icon_github' src='https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/github-512.png'></a>
-                                <a target="_blank" href='https://www.youtube.com/channel/UCFAIPedh-eFzWFmhtdcRLhQ'><img class='social_media_icons' id='icon_youtube' src='https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png'></a>
-                                <!-- <a target="_blank" href='https://.bandcamp.com/'><img class='social_media_icons' id='icon_bandcamp' src='https://cdn4.iconfinder.com/data/icons/social-flat-rounded-rects/512/bandcamp-512.png'></a> -->
-                                <a target="_blank" href='https://www.linkedin.com/in/omkar-bhatt/'><img class='social_media_icons' id='icon_likedin' src='https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png'></a>
-                            </div>
+                    <div id='contact_me'>
+                        <div id='contact_me_social_media'>
+                            <div><u style="font-size: x-large;">Contact Me</u></div>
+                            <a target="_blank" href='https://www.instagram.com/hazyh3ad/'><img class='social_media_icons' id='icon_instagram' src='https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_3-instagram-256.png'></a>
+                            <a target="_blank" href='https://github.com/OB-0ne'><img class='social_media_icons' id='icon_github' src='https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/github-512.png'></a>
+                            <a target="_blank" href='https://www.youtube.com/channel/UCFAIPedh-eFzWFmhtdcRLhQ'><img class='social_media_icons' id='icon_youtube' src='https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png'></a>
+                            <!-- <a target="_blank" href='https://.bandcamp.com/'><img class='social_media_icons' id='icon_bandcamp' src='https://cdn4.iconfinder.com/data/icons/social-flat-rounded-rects/512/bandcamp-512.png'></a> -->
+                            <a target="_blank" href='https://www.linkedin.com/in/omkar-bhatt/'><img class='social_media_icons' id='icon_likedin' src='https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png'></a>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
