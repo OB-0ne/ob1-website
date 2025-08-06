@@ -40,12 +40,12 @@ function draw_map(){
 
   // initiate the icons which will be used for the markers
   var imageMarker = new L.icon({
-    iconUrl: 'icons/map/image-marker.png',
+    iconUrl: '../../icons/map/image-marker.png',
     iconSize: [60,60]
   });
 
   var poiMarker = new L.icon({
-    iconUrl: 'icons/map/poi-marker.png',
+    iconUrl: '../../icons/map/poi-marker.png',
     iconSize: [60,60]
   });  
 
