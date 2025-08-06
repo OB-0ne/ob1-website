@@ -1,7 +1,7 @@
 body {
   background-color: lightgrey;
   /* font-family: Georgia, 'Times New Roman', Times, serif; */
-  font-family: 'Open Sans',monospace;
+  font-family: Saira, monospace;
   box-sizing: 100%;
 }
 
@@ -76,7 +76,7 @@ li a:hover {
 }
 
 .social_media_icons{
-  width: 60px;
+  width: 50px;
   padding: 5px;
 }
 

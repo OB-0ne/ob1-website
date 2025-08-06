@@ -4,17 +4,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="scripts/ui_utils.js"></script>
-        <link rel="stylesheet" href="css/main.css">
+        <script src="../../scripts/ui_utils.js"></script>
+        <link rel="stylesheet" href="../../css/main.css">
         <title>Omkar's Travels</title>
-        <link rel="icon" type="image/x-icon" href="icons/brownie_cat.ico">
+        <link rel="icon" type="../../image/x-icon" href="../../icons/brownie_cat.ico">
         <!-- d3 libraries -->
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <!-- leaflet libraries -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-        <script src='scripts/geomap.js'></script>
-        <link rel="stylesheet" href="css/geomap.css">
+        <script src='geomap.js'></script>
+        <link rel="stylesheet" href="geomap.css">
         <!-- Leaflet Routing Machine -->
         <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
         <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
@@ -27,23 +27,23 @@
             <div id="navbar-back">
                 <div id = "navbar">
                     <ul>
-                        <li><a href="index.html">About Me</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="articles.html">Press</a></li>
+                        <li><a href="../../index.html">About Me</a></li>
+                        <li><a href="../../blog.html">Blog</a></li>
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><a href="../../articles.html">Press</a></li>
                     </ul>   
                 </div>
                 <div id="navbar-phone">
                     <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
-                        <img src="icons/menu.png" height="36px" id="navbar_phone_button">
+                        <img src="../../icons/menu.png" height="36px" id="navbar_phone_button">
                     </div>
                     <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
                         <div id="navbar-phone-holder-list">
                             <ul>
-                                <li><a href="index.html">About Me</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="articles.html">Press</a></li>
+                                <li><a href="../../index.html">About Me</a></li>
+                                <li><a href="../../blog.html">Blog</a></li>
+                                <li><a href="../../projects.html">Projects</a></li>
+                                <li><a href="../../articles.html">Press</a></li>
                             </ul>   
                         </div>                         
                     </div>
@@ -53,7 +53,7 @@
             <div id='main_body'>
                 <div id='phone-meta-info'>
                     <div id='site-logo' >
-                        <img src="icons/ob_logo.png">
+                        <img src="../../icons/ob_logo.png">
                     </div>
                     <div id='phone-page-title'>
                         National Park Road Trip
@@ -62,12 +62,12 @@
                 <div id='map' style='width: 100%; height: 800px;'>
                 
                     <div class="info-icon" onclick="toggleGeomapInfoPopup()">
-                        <img src="icons/map/info-icon.png" height="30px" width="30px"></img>
+                        <img src="../../icons/map/info-icon.png" height="30px" width="30px"></img>
                     </div>
 
                     <div id="info-popup" class="info-popup">
                         <div class="close-btn" onclick="toggleGeomapInfoPopup()">
-                            <img src="icons/map/popup-close.png" height="50px" width="50px"></img>
+                            <img src="../../icons/map/popup-close.png" height="50px" width="50px"></img>
                         </div>
                         <div id="info-popup-content">
                             <h2>Road Tripping across the US - August 2024</h2>
