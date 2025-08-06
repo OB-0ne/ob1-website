@@ -101,7 +101,7 @@ li a:hover {
 }
 
 .social_media_icons{
-  width: 50px;
+  width: 45px;
   padding: 5px;
 }
 
@@ -191,7 +191,7 @@ li a:hover {
 #latest_video_container{
   max-width: 265px;
   display: inline-block;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 #latest_video{
