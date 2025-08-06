@@ -188,6 +188,18 @@ li a:hover {
   font-size: 19px;
 }
 
+#latest_video_container{
+  max-width: 265px;
+  display: inline-block;
+  padding-bottom: 40px;
+}
+
+#latest_video{
+  max-width: 250px;
+  display: inline-block;
+}
+
+
 /* UI override for Desktop */
 #navbar-phone{
   display: none;
@@ -270,9 +282,13 @@ li a:hover {
   }
   li a{
     color: white;
+    padding: 15px 15px;
   }
   .selected_tab {
     background-color: black;
     border-radius: 0px;
+  }
+  #latest_video_container{
+    padding-bottom: 0px;
   }
 }
