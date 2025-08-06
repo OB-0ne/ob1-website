@@ -1,10 +1,9 @@
 
-function draw_map(){
-
-  let custom_map_height = window.innerHeight - 120;
+function draw_map(){5
+  let custom_map_height = window.innerHeight - 150;
   // add a check to see if user is on mobile and set a different map height accordingly
   if (window.innerWidth<=768){
-    custom_map_height = custom_map_height - 95;
+    custom_map_height = custom_map_height - 80;
   }
   document.getElementById('map').setAttribute("style","height:"+(custom_map_height)+"px");
 
