@@ -1,5 +1,4 @@
-
-function draw_map(){5
+function draw_map(){
   let custom_map_height = window.innerHeight - 150;
   // add a check to see if user is on mobile and set a different map height accordingly
   if (window.innerWidth<=768){
