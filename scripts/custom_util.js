@@ -90,6 +90,10 @@ async function get_projects_list(){
 
 }
 
+// A new function to group the available data by groups and updating the UI.
+// Each new group will have a header and projects card will load under them
+// in a new dispatchEvent. Needs a custom function to handle UI changes, which
+// is applied to the title paragraph.
 async function get_projects_list_byType(){
 
     var filtered_list;
@@ -98,26 +102,31 @@ async function get_projects_list_byType(){
     main_div = d3.select('#projects_list');
     main_div.html("");
   
-
     if(data_projects.length>0){
 
-        // get all unique types
+        // get all unique group types
         let uniqueTypes = [...new Set(data_projects.map(d => d['group-type']))]; 
         
         // add a new div with header name for each of the types
         for (var i = 0; i < uniqueTypes.length; i++){
+
+            // add a new div for each type with a unique id
             project_group = main_div.append('div')
                             .attr('id','projectType_'+ uniqueTypes[i]);
 
-            // add a divider
+            // add a divider to start with
             project_group.append('hr');
 
+            // add a paragraph to show title, which will also have a function
+            // which takes care of UI arrow changes to open and collapse for
+            // the project cards
             project_group.append('p')
                     .html('<i class="arrow arrow-right"></i>   ' + uniqueTypes[i])
                     .attr('class','project-list-group-title')
                     .on('click', function(){
 
                         var parent_div = this.parentNode;
+                        // parent will be used to hide/unhide project cards
                         console.log(parent_div);
                         console.log(d3.select(parent_div).selectAll('.project_back'));
 
@@ -143,9 +152,13 @@ async function get_projects_list_byType(){
                         }
                     });        
 
-            // show all the projects as a list
+            // filter the data for the current type
             filtered_list = data_projects.filter(function(d){ return d['group-type']==uniqueTypes[i]});
+
+            // loop on the projects to generate their projects cards
             for (var j = 0; j < filtered_list.length; j++) {
+
+                // making the background of project card - main background div
                 back = project_group.append('div')
                                 .attr('class','project_back')
                                 .append('a')
@@ -176,7 +189,7 @@ async function get_projects_list_byType(){
         d3.selectAll('.project_back')
             .style('display','none');
             
-        // add another diver at the end
+        // add another diver at the end for consistent UI
         project_group.append('hr');
     }
 }

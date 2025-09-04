@@ -165,8 +165,6 @@ function setup_drum_machine(){
     hihat_noise_envelope.setRange(0.5, 0.0);
 
     // setup CYMBAL(Ride) - will need to build metalic harmonics and then add noise with a high pass filter
-    // ride_osc = new p5.SinOsc();
-    // ride_envelope = new p5.Envelope();
     base = 440;
     harmonic_freq = [base, base*2-random(-20,20), base*3-random(-40,40), base*4-random(-80,80), base*5-random(-40,40)-random(-160,160)];
     
@@ -177,7 +175,6 @@ function setup_drum_machine(){
         ride_osc.amp(0);
         ride_osc.start();
         ride_osc_list.push(ride_osc);
-
         
         ride_envelope.setADSR(0.001, 0.4, 0.6, 1);
         ride_envelope.setRange(0.03, 0.0);
