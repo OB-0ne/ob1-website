@@ -144,7 +144,6 @@ li a:hover {
   align-content: center;
   text-align: center;
   margin-bottom: 5px;
-}
 
 #about_me p{
   color: white;
@@ -283,6 +282,10 @@ li a:hover {
   li a{
     color: white;
     padding: 15px 15px;
+  }
+  li a:hover{
+    background-color: black;
+    border-radius: 0px;
   }
   .selected_tab {
     background-color: black;
