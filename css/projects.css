@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+#projects_meta{
+    justify-content: center; 
+    text-align: center;
+    display: grid;
+    margin: 3px auto;
+}
+
+#projects_meta p{
+    justify-content: center; 
+    margin: 2px auto;
+}
+
 .project_link_icon{
     width: 35px;
 }
@@ -139,6 +151,41 @@ a.project_card_click:visited {
     color: #333;
 }
 
+/* for grouping types - added Sep 2025 */
+.project-list-group-title{
+    margin: 0px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.project-list-group-title:hover{
+    background-color: #333;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #fff;
+    border-radius: 15px;
+    border-bottom: 3px double black;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 10px;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow-down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 
 /* REMOVED 2 column pop-up in May 2025 */
 #project_popup_left{
