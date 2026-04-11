@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <title>Motorcycle Diaries</title>
+        <script src="../../scripts/ui_utils.js"></script>
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="icon" type="image/x-icon" href="../../icons/brownie_cat.ico">
+        <!-- d3 libraries -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <!-- leaflet libraries -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+        <script src='geomap.js'></script>
+        <link rel="stylesheet" href="geomap.css">
+        <!-- Leaflet Routing Machine -->
+        <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    </head>
+
+    <body>
+
+        <div id="main-back">
+    
+            <div id="navbar-back">
+                <div id = "navbar">
+                    <ul>
+                        <li><a href="../../index.html">About Me</a></li>
+                        <li><a href="../../blog.html">Blog</a></li>
+                        <div id="site-logo"><a href="../../index.html"><img src="../../icons/ob_logo.png"></a></div>                        
+                        <li><a href="../../projects.html">Projects</a></li>
+                        <li><a href="../../articles.html">Press</a></li>
+                    </ul>
+                </div>
+                <div id="navbar-phone">
+                    <div id="navbar-phone-menu" onclick="togglePhoneNavbar();">
+                        <img src="../../icons/menu.png" height="36px" id="navbar_phone_button">
+                    </div>
+                    <div id="navbar-phone-holder" onclick="togglePhoneNavbar();">
+                        <div id="navbar-phone-holder-list">
+                            <ul>
+                                <li><a href="../../index.html">About Me</a></li>
+                                <li><a href="../../blog.html">Blog</a></li>
+                                <li><a href="../../projects.html">Projects</a></li>
+                                <li><a href="../../articles.html">Press</a></li>
+                            </ul>   
+                        </div>                         
+                    </div>
+                    <div id="site-logo">
+                        <a href="../../index.html">
+                            <img src="../../icons/ob_logo.png">
+                        </a>
+                    </div>     
+                </div>
+            </div>
+
+            <div id='main_body'>
+
+                <!-- THE MAP LAYER -->
+                <div id='map' style='width: 100%; height: 800px;'>
+
+                    <div class="info-icon" onclick="toggleGeomapInfoPopup()">
+                        <img src="../../icons/map/info-icon.png" height="30px" width="30px"></img>
+                    </div>                   
+
+                    <!-- LOADIN MAP POP-UP INFO -->
+                    <div id="info-popup" class="info-popup">
+                        <div class="close-btn" onclick="toggleGeomapInfoPopup()">
+                            <img src="../../icons/map/popup-close.png" height="50px" width="50px"></img>
+                        </div>
+                        <div id="info-popup-content">
+                            <h2>Mapping Che Guevara's Motorcycle Diaries</h2>
+                            <p>Ernesto 'Che' Guevara (23) and Alberto Grando (29) took a motorcycle trip crossing the South American continent in 1952. Che's experiences have been documented and can be found in the book titled 'The Motorcycle Diaries'. </p>
+                            <p>This custom map tries to showcase their journey, thorugh different town and countries. Green lines indicate their motorcycle journey, while Purple lines indicate other modes of transport, like ships on the lakes and the Amazon river.</p>
+                            <p>All the locations depicted use approximate co-ordinates to show cities/regions they visisted, along with possible dotted routes, which may have evolved over the years. These have been collected from the preface provided in the book.</p>
+                            <p>The map was last updated on <i>12th April 2026</i> and documenation in avaialble on <a href="https://github.com/OB-0ne/geomap-motorcycle-diaries-1952" target="_blank">Github</a>. Thank you for being here and supporting me and tiny projects. :)</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        <div id='footer'>
+            <div id="info">
+                Made using d3.js, Leaflet.js <span> &#164; </span> Omkar Bhatt
+            </div>
+            <script>
+                draw_map();
+                setup_map();
+            </script>
+        </div>
+
+    </body>
+</html> 
